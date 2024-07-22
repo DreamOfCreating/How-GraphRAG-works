@@ -70,4 +70,5 @@ Embed the clustered graph into a vector space to facilitate subsequent analysis 
 在构建好的知识图谱上运用Leiden算法进行聚类分析，根据相关性划分社区。
 
 ## 第六步：对社区图进行嵌入
+（这里可以回答为什么有两个graph_embed的疑问）
 将划分社区的图嵌入到向量空间，以便于之后的分析和计算。

@@ -36,17 +36,17 @@ Apply the Leiden algorithm on the constructed knowledge graph for clustering ana
 ## Step 6: Graph Embedding for Community Analysis
 Embed the clustered graph into a vector space to facilitate subsequent analysis and computations.
 
-#中文版
+##中文版
 # 知识图谱的构建
 
-## 第一步：读入文本，将文本分成块
+## 第一步：读入文本，将文本分成块(chunks)
 首先，我们读入文本并将其分成块。这一步的分段对于后续的知识图谱构建过程至关重要。
 
 ## 第二步：识别实体和关系
 从文本中识别出实体和关系。这一步是为了后续的图嵌入过程做准备，在这个过程中，实体被当作节点，关系被当作边。
 
 ## 第三步：文本嵌入向量空间
-将文本嵌入到向量空间，并存储到向量存储库中。这一步对于后续的分析和计算至关重要。
+Text —> vector 将文本嵌入（embedding）到向量空间，并存储到vector_store,将文本嵌入到向量空间，并存储到向量存储库中。。
 
 ## 第四步：根据关系进行图构建
 根据识别出的关系进行图构建。这里用一个例子来说明：

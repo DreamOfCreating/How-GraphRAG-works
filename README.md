@@ -7,34 +7,34 @@
 First, we read the text and divide it into chunks. This segmentation is essential for the subsequent steps in the knowledge graph construction process.
 
 '''python code
-    class TextSplitter(ABC):
-    """Text splitter class definition."""
-
-    _chunk_size: int
-    _chunk_overlap: int
-    _length_function: LengthFn
-    _keep_separator: bool
-    _add_start_index: bool
-    _strip_whitespace: bool
-
-    def __init__(
-        self,
-        # based on text-ada-002-embedding max input buffer length
-        # https://platform.openai.com/docs/guides/embeddings/second-generation-models
-        chunk_size: int = 8191,
-        chunk_overlap: int = 100,
-        length_function: LengthFn = len,
-        keep_separator: bool = False,
-        add_start_index: bool = False,
-        strip_whitespace: bool = True,
-    ):
-        """Init method definition."""
-        self._chunk_size = chunk_size
-        self._chunk_overlap = chunk_overlap
-        self._length_function = length_function
-        self._keep_separator = keep_separator
-        self._add_start_index = add_start_index
-        self._strip_whitespace = strip_whitespace
+        class TextSplitter(ABC):
+        """Text splitter class definition."""
+    
+        _chunk_size: int
+        _chunk_overlap: int
+        _length_function: LengthFn
+        _keep_separator: bool
+        _add_start_index: bool
+        _strip_whitespace: bool
+    
+        def __init__(
+            self,
+            # based on text-ada-002-embedding max input buffer length
+            # https://platform.openai.com/docs/guides/embeddings/second-generation-models
+            chunk_size: int = 8191,
+            chunk_overlap: int = 100,
+            length_function: LengthFn = len,
+            keep_separator: bool = False,
+            add_start_index: bool = False,
+            strip_whitespace: bool = True,
+        ):
+            """Init method definition."""
+            self._chunk_size = chunk_size
+            self._chunk_overlap = chunk_overlap
+            self._length_function = length_function
+            self._keep_separator = keep_separator
+            self._add_start_index = add_start_index
+            self._strip_whitespace = strip_whitespace
 
     @abstractmethod
     def split_text(self, text: str | list[str]) -> Iterable[str]:
